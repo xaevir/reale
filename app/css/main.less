@@ -1,0 +1,396 @@
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "fonts.less";
+@icon-font-path: "../bower_components/bootstrap/fonts/";
+
+html {
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+  color: #323237;
+}
+
+.table {
+  display: table;
+}
+
+.cell {
+  display: table-cell;
+}
+
+.row-same-height {
+  display: table;
+  width: 100%;
+}
+.col-xs-height {
+  display: table-cell;
+  float: none !important;
+}
+
+@media (min-width: 768px) {
+  .col-sm-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+/* vertical alignment styles */
+.col-top {
+  vertical-align:top;
+}
+.col-middle {
+  vertical-align:middle;
+}
+.col-bottom {
+  vertical-align:bottom;
+}
+
+
+.svg-container {
+  height: 0;
+  width: 100%;
+  padding-top: 50%; // (svg height / svg width) * width-value;
+  position: relative; /* create positioning context for svg */
+  .svg-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+header {
+  position: relative;
+  z-index: 2;
+  .navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+    background-color: white;
+    .container-fluid {
+      max-width: 90%;
+      .navbar-brand {
+        width: 160px;
+        display: inline-block;
+        float: left;
+        padding: 5px;
+        font-size: 18px;
+        line-height: 20px;
+        height: auto;
+        .svg-container {
+          //http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
+          height: 0; /* collapse the container's height */
+          width: 100%; /* specify any width you want (a percentage value, basically) */
+          /* apply a padding using the following formula */
+          /* this formula makes sure the aspect ratio of the container equals that of the svg graphic */
+          padding-top: 26%; // (svg height / svg width) * width-value;
+          position: relative; /* create positioning context for svg */
+          .svg-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      .nav {
+        li {
+          a {
+            color: #7B858B;
+            &:hover, &:focus {
+              text-decoration: none;
+              background-color: transparent;
+              color: #333;
+            }
+          }
+          .nav-buy-btn {
+            padding: 8px 20px;
+            font-size: 16px;
+            float: right;
+            font-weight: 400;
+            margin-top: 4px;
+            border-radius: 8px;
+            background-color: #494c50;
+            border: none;
+            color: #fff;
+            &:hover, &:active, &:focus {
+              background-color: #63686f;
+              color: #fff;
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+}
+.homepage {
+  section {
+    margin: 75px 0;
+    @media (min-width: @screen-sm-min) {
+      margin: 200px 0;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 200;
+      margin-bottom: 1em;
+      @media (min-width: @screen-sm-min) {
+        text-align: center;
+        font-size: 40px;
+      }
+      @media (min-width: @screen-lg-min) {
+        font-size: 50px;
+      }
+    }
+    p {
+      font-size: 18px;
+      @media (min-width: @screen-sm-min) {
+        font-size: 24px;
+        text-align: center;
+      }
+      @media (min-width: @screen-lg-min) {
+        font-size: 32px;
+      }
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-top: 40px;
+      width: 120px;
+      @media (min-width: @screen-sm-min) {
+        width: 175px;
+      }
+    }
+    .laurel {
+      @media (min-width: @screen-sm-min) {
+        width: 120px;
+      }
+    }
+    .inner {
+      padding: 50px 0;
+      @media (min-width: @screen-sm-min) {
+        padding: 100px 50px;
+      }
+      h1 {
+        color: white;
+        text-align: left;
+        padding-top: .5em;
+        margin-top: 0;
+        font-size: 30px;
+        font-weight: 400;
+        @media (min-width: @screen-sm-min) {
+          font-size: 30px;
+        }
+        @media (min-width: @screen-lg-min) {
+          font-size: 40px;
+        }
+      }
+      p {
+        text-align: left;
+        color: white;
+        font-size: 18px;
+        @media (min-width: @screen-sm-min) {
+          font-size: 22px;
+        }
+        @media (min-width: @screen-lg-min) {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  .hero {
+    margin-top: 0;
+    h1 {
+      font-size: 20px;
+      max-width: 530px;
+      @media (min-width: 768px) {
+        font-size: 30px;
+      }
+    }
+    .subtitle {
+      display: block;
+      margin-top: .5em;
+    }
+    .svg-container {
+      padding-top: 13.6%;
+      svg {
+        fill: #323237;
+      }
+    }
+    .nav-buy-btn {
+      @media (min-width: @screen-md-min) {
+        display: none;
+      }
+    }
+    @media (orientation: landscape) {
+      background: url('/img/homepage-bg.jpg') center center / cover no-repeat;
+      .cell {
+        vertical-align: middle;
+        h1 {
+          text-align: left;
+          @media (min-width: 1367px) {
+            max-width: 700px;
+          }
+        }
+      }
+    }
+    @media (orientation: portrait) {
+      background: url('/img/portrait-bg.jpg') center top / cover no-repeat;
+      height: 100%;
+      .col-xs-6:first-child {
+        display: none;
+      }
+      .col-xs-6 {
+        width: 100%;
+        .cell {
+          vertical-align: bottom;
+          padding-bottom: 10%;
+          h1 {
+            text-align: center;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    .chevron {
+      display: none;
+      position: absolute;
+      cursor: pointer;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: 0;
+      margin-bottom: 20px;
+      text-align: center;
+      @media (min-width: @screen-md-min) {
+        display: block;
+      }
+    }
+  }
+  .thermal-stability {
+    .row {
+      [class*="col-"] {
+        background-color: #57a2d6;
+      }
+      .therma-pic {
+        background-position: top right;
+        background-size: cover;
+        background-image: url('/img/handle.jpg');
+        height: 240px;
+      }
+    }
+  }
+  .milk-preinfusion {
+    .preinfusion {
+      background-color: #43a599;
+    }
+    .preinfusion-pic {
+      height: 240px;
+      background-position: top center;
+      background-size: cover;
+      background-image: url('/img/preinfusion.jpg');
+
+    }
+    .milk {
+      background-color: #ea6b3e;
+    }
+    .wrap {
+      position: relative;
+      height: 100%;
+    }
+    .milk-pic {
+      background-position: top center;
+      background-size: cover;
+      background-image: url('/img/milk.jpg');
+      @media (max-width: @screen-xs-max) {
+        height: 240px;
+      }
+
+    }
+    .milk-pic.col-sm-6 {
+      @media (min-width: @screen-sm-min) {
+        position: static;
+        &:before {
+          width: 50%;
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          z-index: -1;
+          //left: 0;
+          left: 50%;
+          .milk-pic;
+        }
+      }
+    }
+
+  }
+  .buy {
+    text-align: center;
+    .svg-container {
+      padding-top: 13.6%;
+      margin: 0 auto;
+      svg {
+        fill: #323237;
+      }
+      max-width: 480px;
+      @media (min-width: @screen-lg-min) {
+        max-width: 580px;
+      }
+    }
+    h1 {
+      margin-bottom: 2em;
+    }
+    .btn {
+      padding: 15px 40px;
+      font-size: 2em;
+      border-radius: 50px;
+      display: inline-block;
+      @media (max-width: @screen-xs-max) {
+        .btn-block;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+footer {
+  background-color: #494c50;
+  margin-top: 100px;
+  color: #fff;
+  font-weight: 400;
+  padding: 20px 0;
+  .container-fluid {
+    max-width: 90%;
+  }
+  .copyright {
+    font-size: 16px;
+    float: left;
+  }
+  .nav {
+    float: right;
+    li {
+      a {
+        padding: 0;
+        margin-right: 10px;
+        font-size: 16px;
+        color: white;
+        &:hover, &:focus {
+          text-decoration: underline;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
